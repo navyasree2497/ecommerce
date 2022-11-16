@@ -16,10 +16,6 @@ public class WishlistService {
         return repository.save(wishlist);
     }
 
-    public List<Wishlist> addWishlists(List<Wishlist> wishlists){
-        return repository.saveAll(wishlists);
-    }
-
     public List<Wishlist> getWishlists(){
         return repository.findAll();
     }
