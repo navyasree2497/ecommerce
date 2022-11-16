@@ -22,4 +22,5 @@ public class Rating{
     private int productId;
     private int customerId;
     private float rating;
+    private String review;
 }
