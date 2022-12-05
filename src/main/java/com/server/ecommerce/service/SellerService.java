@@ -1,6 +1,8 @@
 package com.server.ecommerce.service;
 
+import com.server.ecommerce.entity.Customer;
 import com.server.ecommerce.entity.Seller;
+import com.server.ecommerce.entity.SellerDTO;
 import com.server.ecommerce.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,4 +29,13 @@ public class SellerService {
     public Seller getSellerById(int id){
         return repository.findById(id).orElse(null);
     }
+
+    public List<SellerDTO> getSellersByProductId(int id){
+        return repository.getSellersNative(id);
+    }
+
+    public List<Seller> findSellerByName(String userName){
+        return repository.findSellerByName(userName);
+    }
+
 }

@@ -1,21 +1,27 @@
 package com.server.ecommerce.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
-@Data
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="id")
+
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Seller")
+@Table(name = "Sellers")
 public class Seller extends User{
 
-    private String sellerLocation;
+    private String seller_location;
     private String rating;
+
+//    @ManyToMany(mappedBy = "sellers", fetch = FetchType.LAZY)
+////    @JsonBackReference
+//    private Set<Product> products;
 }
