@@ -1,6 +1,7 @@
 package com.server.ecommerce.service;
 
 import com.server.ecommerce.entity.Order;
+import com.server.ecommerce.entity.OrderDTO;
 import com.server.ecommerce.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,13 @@ public class OrderService {
     public List<Order> getOrders(){
         return repository.findAll();
     }
+//    public List<Order> getAllOrdersNative(){
+//        return repository.getAllOrdersNative();
+//    }
+//
+//    public List<OrderDTO> getAllOrdersNativeDTO(){
+//        return repository.getAllOrdersNativeDTO();
+//    }
 
     public Order getOrderById(int id){
         return repository.findById(id).orElse(null);

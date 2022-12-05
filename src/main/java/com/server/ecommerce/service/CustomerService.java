@@ -27,4 +27,9 @@ public class CustomerService {
     public Customer getCustomerById(int id){
         return repository.findById(id).orElse(null);
     }
+
+    public List<Customer> findCustomerByName(String userName){
+        return repository.findCustomerByName(userName);
+    }
+
 }
